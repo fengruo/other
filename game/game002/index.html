@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>枫若简页-game002</title>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+<script type="text/javascript">
+	// 定义存放生成随机数的数组 
+
+ 
+
+$(document).ready(function(){
+	
+	
+	$("#yugou").css("background","url(images/0.jpg)");
+	$("#refresh").hide();
+	$("#fishing").hide();
+	var array=new Array(); 
+	// 循环N次生成随机数 
+ for(var i = 0 ; ; i++){ 
+    // 只生成10个随机数 (钓鱼成功几率)
+    if(array.length<3){ 
+          generateRandom(6); 
+    }else{ 
+      break; 
+   } 
+} 
+// 循环遍历随机数数组 
+
+// 生成随机数的方法 
+function generateRandom(count){ 
+     var rand = parseInt(Math.random()*count); 
+     array.push(rand); 
+}
+ $("#fish").val(array[1]);
+ $("#fishing").click(function(){
+ 	$("#hook").val(array[2]);
+ 	if(array[1]==array[2]){
+ 		alert("WOW!一条大鱼！点击重新开始！");
+ 		$("#yugou").css("background","url(images/1.jpg)");
+ 		$("#refresh").val("你真棒！点我重来！");
+ 		$("#refresh").css("font-size","80px");
+ 		$("#refresh").css("color","red");
+ 		$("#refresh").show();
+ 		$("#fishing").hide();
+ 		$("#refresh").click(function(){
+		reload()();
+ 		});
+ 	}else{
+ 		$("#yugou").css("background","url(images/0.jpg)");
+ 		$("#refresh").val("没有钓到点击重新开始");
+ 		$("#refresh").css("font-size","80px");
+		$("#refresh").show();
+ 		$("#fishing").hide();
+ 		$("#refresh").click(function(){
+
+ 		reload();
+ 	});
+ 	}
+ });
+ $("#too").click(function(){
+ 		$("#yugou").css("background","url(images/state.jpg)");
+ 		$("#fishing").show();
+ 		$("#too").hide();
+ 	});
+ 
+});
+function reload(){
+
+window.location.href=window.location.href+"?id="+10000*Math.random();
+}
+</script>
+<style type="text/css">
+	#yugou{width: 1080px;height: 1920px;}
+	input{width: 1080px;height: 1920px;background-color: transparent;border: none; }
+	input{font-size: 170px;font-weight: bold;color: white;}
+</style>
+</head>
+<body>
+<div>
+
+<div id="yugou"></input> <input type="button" value="  " id="refresh"></input>
+<input type="button" value="点击甩竿" id="too"></input>
+<input type="button" value="点击提竿" id="fishing"></input></div>
+</div>
+<input type="hidden" value=" " id="hook"></input>
+<input type="hidden" value=" " id="fish"></input>
+
+
+</body>
+</html>

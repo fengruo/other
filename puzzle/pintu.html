@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle</title>
+    <link rel="stylesheet" type="text/css" href="css/puzzle.css">
+    <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="js/puzzle.js"></script>
+</head>
+<body  oncontextmenu="return false;" onselectstart="return false;">
+<div  style="float: left">
+    <img src="image/timg.jpg">
+</div>
+<div id="container">
+    <div id="game">
+        <div id="d1" onclick="move(1)"><img src="image/1.jpg"></div>
+        <div id="d2" onclick="move(2)"><img src="image/2.jpg"></div>
+        <div id="d3" onclick="move(3)"><img src="image/3.jpg"></div>
+        <div id="d4" onclick="move(4)"><img src="image/4.jpg"></div>
+        <div id="d5" onclick="move(5)"><img src="image/5.jpg"></div>
+        <div id="d6" onclick="move(6)"><img src="image/6.jpg"></div>
+        <div id="d7" onclick="move(7)"><img src="image/7.jpg"></div>
+        <div id="d8" onclick="move(8)"><img src="image/8.jpg"></div>
+    </div>
+    <div id="control">
+            <button id="reset" onclick="reset()">来拼图</button>
+    </div>
+</div>
+
+</body>
+</html>

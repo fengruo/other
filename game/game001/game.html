@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>枫若简页</title>
+<meta charset="UTF-8">
+<script src="../script/jquery.js"></script>
+<SCRIPT language=javascript> 
+function click() {if (event.button==2) {alert('不许你偷看！');}}document.onmousedown=click 
+</SCRIPT> 
+<script type="text/javascript"> 
+
+// 定义存放生成随机数的数组 
+var array=new Array(); 
+// 循环N次生成随机数 
+ for(var i = 0 ; ; i++){ 
+    // 只生成10个随机数 
+    if(array.length<8){ 
+          generateRandom(8); 
+    }else{ 
+      break; 
+   } 
+} 
+// 循环遍历随机数数组 
+
+// 生成随机数的方法 
+function generateRandom(count){ 
+     var rand = parseInt(Math.random()*count+1); 
+     for(var i = 0 ; i < array.length; i++){ 
+          if(array[i] == rand){ 
+               return false; 
+          }      
+     } 
+     array.push(rand); 
+} 
+
+$(document).ready(function(){
+	for(var i = 0 ; i < array.length; i++){ 
+    $("#one"+i).val(array[i]);
+     
+} 
+  $("#btn1").click(function(){
+   	location.reload();
+  });
+   $("#one0").click(function(){
+    if($("#one0").val()!=" "){
+        	for(var i = 0 ; i <=8; i++){ 
+if(i==1||i==3){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one0").val());
+                $("#one0").val(" ");
+				}}
+             } 
+        }  	
+  });
+    $("#one1").click(function(){
+    if($("#one1").val()!=" "){
+        	for(var i = 0 ; i <=8; i++){ 
+if(i==0||i==4||i==2){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one1").val());
+                $("#one1").val(" ");
+				}}
+             } 
+        }  	
+  });
+     $("#one2").click(function(){
+    if($("#one2").val()!=" "){
+        	for(var i = 0 ; i <=8; i++){ 
+if(i==1||i==5){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one2").val());
+                $("#one2").val(" ");
+				}}
+             } 
+        }  	
+  });
+      $("#one3").click(function(){
+   if($("#one3").val()!=" "){
+        	for(var i = 0 ; i <=8; i++){ 
+if(i==0||i==4||i==6){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one3").val());
+                $("#one3").val(" ");
+				}}
+             } 
+        }  	
+  });
+       $("#one4").click(function(){
+    if($("#one4").val()!=" "){
+        	for(var i = 0 ; i <=8; i++){ 
+if(i==1||i==3||i==5||i==7){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one4").val());
+                $("#one4").val(" ");
+				}}
+             } 
+        }  	
+  });
+        $("#one5").click(function(){
+   	 if($("#one5").val()!="*"){
+        	for(var i = 0 ; i <=8; i++){ 
+if(i==8||i==4||i==2){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one5").val());
+                $("#one5").val(" ");
+				}
+             } }
+        }  	
+  });
+         $("#one6").click(function(){
+    if($("#one6").val()!="*"){
+        	for(var i = 0 ; i <=8; i++){ 
+	if(i==3||i==7){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one6").val());
+                $("#one6").val(" ");
+				}}
+             } 
+        }  	
+  });
+          $("#one7").click(function(){
+
+        if($("#one7").val()!=" "){
+        	for(var i = 0 ; i <=8; i++){ 
+        		if(i==4||i==6||i==8){
+        if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one7").val());
+                $("#one7").val(" ");
+				}}
+             } 
+        }  	
+   	 
+  });
+           $("#one8").click(function(){
+   	 if($("#one8").val()!=" "){
+        	for(var i = 0 ; i <=8; i++){ 
+        		if(i==5||i==7){
+
+        			 if($("#one"+i).val()==" "){
+				$("#one"+i).val($("#one8").val());
+                $("#one8").val(" ");
+				}
+             } 
+        }  	
+        }
+       
+  });
+       $("input").click(function(){
+if($("#one8").val()==" "&$("#one7").val()==8&$("#one6").val()==7&$("#one5").val()==6&$("#one4").val()==5&$("#one3").val()==4&$("#one2").val()==3&$("#one1").val()==2&$("#one0").val()==1){
+	$("#one8").val("OK");
+  alert("Good!");
+}
+       });   
+
+});
+
+
+
+</script>
+ 
+<style type="text/css"> 
+body{text-align: center;}
+table{width: 100%;height: 100%}
+input{width: 220px;height:220px;margin: 0px 0px;font-size: 70px;font-weight:blod;}
+button{text-align: center;height: 60px;font-size: 40px;background-color: #28E3CF;}
+span{font-size: 40px;float: right;}
+</style>
+</head>
+ 
+<body>
+ <button id="btn1">重新开始</button>
+ <br>
+ <table>
+  <tr><td>
+ <input type="button" id="one0" value="">
+ <input type="button" id="one1" value="">
+ <input type="button" id="one2" value="">
+ </td></tr><tr><td>
+ <input type="button" id="one3" value="">
+ <input type="button" id="one4" value="">
+ <input type="button" id="one5" value="">
+ </td></tr>
+  <tr><td>
+ <input type="button" id="one6" value="">
+ <input type="button" id="one7" value="">
+ <input type="button" id="one8" value=" ">
+ </td></tr><tr><td><span>数字排列1-8即为成功</span></td></tr>
+</table>
+
+</body>
+</html>
